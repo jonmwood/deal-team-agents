@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Guided first-run setup for the deal team. Interviews a new user in plain English (about 10 minutes), writes their buy box to my/buy-box.md and their buyer profile to my/about-me.md, then offers a test run on a real listing. Use for "/deal-team:setup" or "/setup", "set me up", "help me fill in my buy box", "configure the agents", or whenever my/buy-box.md is missing or still has blanks. Re-run any time to update.
+description: Guided first-run setup for the deal team. Interviews a new user in plain English (about 10 minutes), writes their buy box to my/buy-box.md and their buyer profile to my/about-me.md, then offers a test run on a real listing. Use for "/deal-team:setup", "set me up", "help me fill in my buy box", "configure the agents", or whenever my/buy-box.md is missing or still has blanks. Re-run any time to update.
 ---
 
 # Setup: your deal team
@@ -10,7 +10,7 @@ You're walking someone through their first setup. Assume they're smart, new to b
 - `my/buy-box.md`: the rules a business has to clear (built from the buy box template at the end of this file)
 - `my/about-me.md`: who they are, so the advice fits them (built from the profile template at the end of this file)
 
-Both live in `my/` inside the folder they're working in (their project folder in Claude Code, or the folder their Cowork task uses). Both stay on their computer. In the downloaded-folder version, `my/` and `deals/` are git-ignored; if they use the plugin in a folder that's their own git repo, tell them to add `my/` and `deals/` to that repo's `.gitignore` before pushing it anywhere public. Both templates are at the end of this file, so there's nothing else to open.
+Both live in `my/` inside the folder they're working in (their project folder in Claude Code, or the folder their Cowork task uses). Both stay on their computer. If their working folder is ever pushed to a public git repo, `my/` and `deals/` should be in its `.gitignore` first (this repo's own `.gitignore` already covers them). Both templates are at the end of this file, so there's nothing else to open.
 
 ## How to run the interview
 
@@ -56,7 +56,7 @@ Offer it, don't force it:
 "Want to see it work? Paste a link to a business for sale, from BizBuySell, a broker's site, or an alert email, and I'll run the screener on it."
 
 - Run the **deal-screener** agent on it and show the verdict. Explain the result in two lines, especially what UNVERIFIED means (the listing didn't say, so the screener refused to guess).
-- If it PROMOTEs, offer the full team: `/deal-team:diligence <the same link>` (or `/diligence` in folder mode).
+- If it PROMOTEs, offer the full team: `/deal-team:diligence <the same link>`.
 - If they don't have a listing handy, skip it.
 
 ## Close
@@ -65,7 +65,7 @@ End with a short "here's what you've got":
 
 - **Your rules:** `my/buy-box.md`. **Your profile:** `my/about-me.md`. Edit either any time, or run setup again.
 - **Screen a listing:** "Use the deal-screener on this listing: [paste]."
-- **Run the whole team:** `/deal-team:diligence [listing link]` (or `/diligence` in folder mode).
+- **Run the whole team:** `/deal-team:diligence [listing link]` (in ChatGPT: "run diligence on [link]").
 - **Your deal work** lands in `deals/` and your answers in `my/`, both in this folder on your computer. If this folder is ever pushed to a public git repo, make sure `my/` and `deals/` are in its `.gitignore` first.
 - **The ground rule:** the agents never make the buy or pass call. They help you make it.
 

@@ -1,18 +1,20 @@
 {
   "name": "deal-team",
   "displayName": "Deal Team",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Four AI agents that screen and research small businesses for sale, plus a guided setup for your buy box. Built for first-time business buyers.",
-  "author": { "name": "Jon Wood", "url": "https://www.instagram.com/thelong.view/" },
+  "author": {
+    "name": "Jon Wood",
+    "url": "https://www.instagram.com/thelong.view/"
+  },
   "homepage": "https://github.com/jonmwood/deal-team-agents",
   "repository": "https://github.com/jonmwood/deal-team-agents",
   "license": "MIT",
-  "keywords": ["business acquisition", "small business", "due diligence", "buy box", "agents"],
-  "agents": [
-    "./.claude/agents/deal-screener.md",
-    "./.claude/agents/deal-mentor.md",
-    "./.claude/agents/analyst.md",
-    "./.claude/agents/growth-strategist.md"
-  ],
-  "skills": ["./.claude/skills/"]
+  "keywords": [
+    "business acquisition",
+    "small business",
+    "due diligence",
+    "buy box",
+    "agents"
+  ]
 }

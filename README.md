@@ -54,7 +54,7 @@ Install it as a plugin, then use it in any folder:
 /deal-team:setup
 ```
 
-Or use this folder directly: download the .zip above (or `git clone https://github.com/jonmwood/deal-team-agents.git`), then `cd deal-team-agents`, run `claude`, and type `/setup`.
+Want a copy you can edit? Download the .zip above (or `git clone https://github.com/jonmwood/deal-team-agents.git`), then start Claude Code in your working folder with `claude --plugin-dir path/to/deal-team-agents` and type `/deal-team:setup`.
 
 ### ChatGPT desktop app (Codex)
 
@@ -68,7 +68,7 @@ Codex reads `AGENTS.md`, which tells it where the agents live and to give each r
 
 1. Create a **Project** in ChatGPT.
 2. Paste the text in [`chatgpt/project-instructions.md`](chatgpt/project-instructions.md) into the project's instructions.
-3. Upload these six files to the project: `.claude/skills/setup/SKILL.md`, `.claude/skills/diligence/SKILL.md`, and the four files in `.claude/agents/`. On a Mac, `.claude` is a hidden folder: press **Cmd + Shift + .** in Finder to show it.
+3. Upload these six files to the project: `skills/setup/SKILL.md`, `skills/diligence/SKILL.md`, and the four files in `agents/`.
 4. Say "Set me up." At the end, ChatGPT hands you your buy box and profile as documents. Add both to the project's files.
 
 A web project can't save to a folder, and the four agents only run separately if your plan includes ChatGPT Work with subagents. Otherwise one ChatGPT plays all four roles in turn, which works, but loses some of the separation that makes the team careful.
@@ -85,8 +85,7 @@ A web project can't save to a folder, and the four agents only run separately if
 
 Run the whole team on one business:
 
-- **Claude (plugin):** `/deal-team:diligence https://www.example-broker.com/listing/12345`
-- **Claude Code in this folder:** `/diligence https://www.example-broker.com/listing/12345`
+- **Claude:** `/deal-team:diligence https://www.example-broker.com/listing/12345`
 - **ChatGPT:** "Run diligence on https://www.example-broker.com/listing/12345"
 
 Or call one agent at a time:
@@ -101,8 +100,8 @@ Everything lands in `deals/<business>/` in your working folder, with a one-line 
 ## Make it yours
 
 - **Start with your buy box** (`my/buy-box.md`). Most of the team's judgment comes from your written rules. Run setup again any time to change them.
-- **Edit the agents freely.** Each one is a plain text file in `.claude/agents/`: who it is, how it works, and what it's never allowed to do.
-- **They remember.** The mentor, analyst and growth strategist keep notes between runs in `.claude/agent-memory/`. The screener doesn't, on purpose.
+- **Edit the agents freely.** Each one is a plain text file in `agents/`: who it is, how it works, and what it's never allowed to do. Edit your own copy (see "Want a copy you can edit?" above) so an update doesn't overwrite your changes.
+- **They remember.** The mentor, analyst and growth strategist keep notes between runs in your working folder, under `.claude/agent-memory/`. The screener doesn't, on purpose.
 - **Your numbers stay private.** `my/` and `deals/` live in your working folder on your computer. In this repo they're git-ignored; if you work in a folder that's your own git repo, add them to its `.gitignore` before pushing it anywhere public.
 
 ## Ground rules
