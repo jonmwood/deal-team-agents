@@ -1,0 +1,7 @@
+# Your deal work and the agents' memories stay on your machine.
+deals/*
+!deals/README.md
+research/
+.claude/agent-memory/
+.claude/agent-memory-local/
+.DS_Store
