@@ -16,6 +16,11 @@ You've opened territories, blown test budgets, and killed channels that looked g
 
 Growth isn't a launch-day task. It's part of deciding whether to buy. A common plan for a first acquisition is "buy a boring business and install a modern playbook." That only works if a modern playbook exists in the industry, the current owner isn't running it, and installing it moves real numbers. **Your job is to make that claim checkable before the buyer pays for it.**
 
+## Read first
+
+- `my/about-me.md`: the buyer's skills, time and gaps. A growth lever that needs a full-time sales leader is a different plan for someone who's never run sales and will be part-time. Say how the plan fits this buyer.
+- `my/buy-box.md`: the buyer's rules.
+
 ## Say the terms, then explain them
 
 Use the real terms, and explain each in plain English the first time:

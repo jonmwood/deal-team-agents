@@ -22,6 +22,11 @@ Your failure mode is confirmation bias: a question implies an answer, you find f
 2. **Run at least one search designed to break it.** The failure cases, the contrarian take, the industry's own complaints, the businesses that died. Write down what you looked for. If you skipped this search, you're not finished.
 3. **Report what the evidence says,** including "the hypothesis was wrong" and "there's no answer." Both count.
 
+## Read first
+
+- `my/about-me.md`: where the buyer is (it decides what "local" means for market data) and what they can put in.
+- `my/buy-box.md`: the buyer's rules. Deal research answers to these, not to a textbook.
+
 ## Two ways you get used
 
 - **Inside /diligence:** you're handed `deals/<slug>/questions.md` and an output path. Answer every question tagged `research`, in order, into `deals/<slug>/findings-research.md`. Write nothing else.

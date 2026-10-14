@@ -33,9 +33,10 @@ Questions only the seller can answer never go to research. They become your list
 
 1. **Install Claude Code:** [setup guide](https://code.claude.com/docs/en/setup).
 2. **Get this folder:** download the .zip above and unzip it, or `git clone https://github.com/jonmwood/deal-team-agents.git`.
-3. **Fill in `buy-box.md`.** Every `[BRACKET]`. This is the most important file in the folder; the screener judges every listing against it.
-4. **Fill in the one bracket in `.claude/agents/deal-mentor.md`:** the size of business you're looking for.
-5. **Open the folder in Claude Code:** `cd deal-team-agents`, then `claude`.
+3. **Open it in Claude Code:** `cd deal-team-agents`, then `claude`.
+4. **Type `/setup-team`.** It interviews you in plain English (about 10 minutes, "not sure" is always fine), then writes your buy box and a short profile the agents read before every run. At the end it offers a test run on a real listing.
+
+Prefer to do it by hand? Copy `templates/buy-box.md` and `templates/about-me.md` into a folder called `my/` and fill in every `[BRACKET]`.
 
 ## Use it
 
@@ -56,10 +57,10 @@ Everything lands in `deals/<business>/`, with a one-line log of every listing in
 
 ## Make it yours
 
-- **Start with the buy box.** Most of the team's judgment comes from your written rules.
+- **Start with your buy box** (`my/buy-box.md`). Most of the team's judgment comes from your written rules. Re-run `/setup-team` any time to change them.
 - **Edit the agents freely.** Each one is a plain text file in `.claude/agents/`: who it is, how it works, and what it's never allowed to do.
 - **They remember.** The mentor, analyst and growth strategist keep notes between runs in `.claude/agent-memory/`. The screener doesn't, on purpose.
-- **Your deal work stays private.** `deals/`, `research/` and the agents' memory are git-ignored, so pushing your copy of this repo won't publish them.
+- **Your numbers stay private.** `my/`, `deals/`, `research/` and the agents' memory are git-ignored, so pushing your copy of this repo won't publish them.
 
 ## Ground rules
 

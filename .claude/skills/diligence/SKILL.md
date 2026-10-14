@@ -11,6 +11,7 @@ You (the main session) are the coordinator. The four agents do the work; you han
 
 ## Step 0: set up
 
+0. **If `my/buy-box.md` doesn't exist yet, or still has unfilled `[BRACKETS]`, stop and tell the user to run `/setup-team` first.** Screening against a blank rule is guessing.
 1. Pick a short slug for the business (e.g. `acme-hvac`). Check `deals/` for an existing folder or a line in `deals/log.md` first. If it's already there, this is an update: reuse the folder, don't create a second one.
 2. Create `deals/<slug>/` and save the raw input to `deals/<slug>/listing.md`.
 

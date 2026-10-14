@@ -2,7 +2,7 @@
 
 The rules a business has to clear before I spend real time on it. The screener reads this file fresh on every listing, so edit it whenever your thinking changes.
 
-**Fill in every `[BRACKET]` before you run anything.** The six rules below are examples of the *kinds* of rules a first-time buyer usually needs. Keep the ones that fit you, rewrite the rest, and add your own. A rule only works if a listing can actually pass or fail it, so write each one as something a listing either states or doesn't.
+**This is the template.** The easy way to fill it in is `/setup-team`, which interviews you and writes your copy to `my/buy-box.md` (git-ignored, so your numbers stay on your machine). To do it by hand, copy this file to `my/buy-box.md` and fill in every `[BRACKET]`. The six rules below are examples of the *kinds* of rules a first-time buyer usually needs. Keep the ones that fit you, rewrite the rest, and add your own. A rule only works if a listing can actually pass or fail it, so write each one as something a listing either states or doesn't.
 
 ---
 
