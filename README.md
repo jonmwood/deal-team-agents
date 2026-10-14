@@ -1,6 +1,8 @@
 # The deal team
 
-Four AI agents that help a first-time buyer screen and research small businesses for sale, plus one command that runs them in order. Built in [Claude Code](https://code.claude.com/docs/en/overview) by Jon ([@thelong.view](https://www.instagram.com/thelong.view/)), a dad of four buying his first business.
+Four AI agents that help a first-time buyer screen and research small businesses for sale, plus a guided setup and one command that runs the whole team. Built in [Claude Code](https://code.claude.com/docs/en/overview) by Jon ([@thelong.view](https://www.instagram.com/thelong.view/)), a dad of four buying his first business.
+
+**Works in Claude Cowork, Claude Code and the ChatGPT desktop app**, with a lighter version for ChatGPT on the web. Pick your app below.
 
 **[Download the latest version (.zip)](https://github.com/jonmwood/deal-team-agents/releases/latest/download/deal-team-agents.zip)**
 
@@ -29,22 +31,63 @@ listing
 
 Questions only the seller can answer never go to research. They become your list for the broker.
 
-## Set it up (about 15 minutes)
+## Get started (about 15 minutes)
 
-1. **Install Claude Code:** [setup guide](https://code.claude.com/docs/en/setup).
-2. **Get this folder:** download the .zip above and unzip it, or `git clone https://github.com/jonmwood/deal-team-agents.git`.
-3. **Open it in Claude Code:** `cd deal-team-agents`, then `claude`.
-4. **Type `/setup-team`.** It interviews you in plain English (about 10 minutes, "not sure" is always fine), then writes your buy box and a short profile the agents read before every run. At the end it offers a test run on a real listing.
+Pick the app you use. Every path ends the same way: a short interview that writes your buy box, then the team is ready.
 
-Prefer to do it by hand? Copy `templates/buy-box.md` and `templates/about-me.md` into a folder called `my/` and fill in every `[BRACKET]`.
+### Claude Cowork or the Claude app (easiest)
+
+1. In Claude, open **Customize → Plugins → Add → Add marketplace**.
+2. Enter `jonmwood/deal-team-agents`.
+3. Find **Deal Team** in the list and add it.
+4. Start a **Cowork** task in a folder on your computer (your buy box and deal work are saved there), then type `/deal-team:setup` or just say "set up my deal team."
+
+To get updates later, open the marketplace in **Customize → Plugins** and select **Check for updates**, or turn on **Sync automatically**.
+
+### Claude Code
+
+Install it as a plugin, then use it in any folder:
+
+```
+/plugin marketplace add jonmwood/deal-team-agents
+/plugin install deal-team@deal-team-agents
+/deal-team:setup
+```
+
+Or use this folder directly: download the .zip above (or `git clone https://github.com/jonmwood/deal-team-agents.git`), then `cd deal-team-agents`, run `claude`, and type `/setup`.
+
+### ChatGPT desktop app (Codex)
+
+1. Download the .zip above and unzip it.
+2. In the ChatGPT desktop app, open the `deal-team-agents` folder as a local project and choose **Codex**.
+3. Say "Set me up."
+
+Codex reads `AGENTS.md`, which tells it where the agents live and to give each role its own subagent.
+
+### ChatGPT on the web (lighter version)
+
+1. Create a **Project** in ChatGPT.
+2. Paste the text in [`chatgpt/project-instructions.md`](chatgpt/project-instructions.md) into the project's instructions.
+3. Upload these six files to the project: `.claude/skills/setup/SKILL.md`, `.claude/skills/diligence/SKILL.md`, and the four files in `.claude/agents/`. On a Mac, `.claude` is a hidden folder: press **Cmd + Shift + .** in Finder to show it.
+4. Say "Set me up." At the end, ChatGPT hands you your buy box and profile as documents. Add both to the project's files.
+
+A web project can't save to a folder, and the four agents only run separately if your plan includes ChatGPT Work with subagents. Otherwise one ChatGPT plays all four roles in turn, which works, but loses some of the separation that makes the team careful.
+
+### What works where
+
+| | Claude Cowork | Claude Code | ChatGPT desktop (Codex) | ChatGPT web Project | Claude chat |
+|---|---|---|---|---|---|
+| Guided setup | ✅ | ✅ | ✅ | ✅ you save the files | ✅ you save the files |
+| Four separate agents | ✅ | ✅ | ✅ subagents | Only with ChatGPT Work | ❌ one Claude plays every role |
+| Saves to a folder on your computer | ✅ | ✅ | ✅ | ❌ | ❌ |
 
 ## Use it
 
 Run the whole team on one business:
 
-```
-/diligence https://www.example-broker.com/listing/12345
-```
+- **Claude (plugin):** `/deal-team:diligence https://www.example-broker.com/listing/12345`
+- **Claude Code in this folder:** `/diligence https://www.example-broker.com/listing/12345`
+- **ChatGPT:** "Run diligence on https://www.example-broker.com/listing/12345"
 
 Or call one agent at a time:
 
@@ -53,14 +96,14 @@ Or call one agent at a time:
 - "Have the analyst research what HVAC service businesses in [your area] sell for"
 - "Ask the growth-strategist how residential pest control companies win customers"
 
-Everything lands in `deals/<business>/`, with a one-line log of every listing in `deals/log.md`.
+Everything lands in `deals/<business>/` in your working folder, with a one-line log of every listing in `deals/log.md`.
 
 ## Make it yours
 
-- **Start with your buy box** (`my/buy-box.md`). Most of the team's judgment comes from your written rules. Re-run `/setup-team` any time to change them.
+- **Start with your buy box** (`my/buy-box.md`). Most of the team's judgment comes from your written rules. Run setup again any time to change them.
 - **Edit the agents freely.** Each one is a plain text file in `.claude/agents/`: who it is, how it works, and what it's never allowed to do.
 - **They remember.** The mentor, analyst and growth strategist keep notes between runs in `.claude/agent-memory/`. The screener doesn't, on purpose.
-- **Your numbers stay private.** `my/`, `deals/`, `research/` and the agents' memory are git-ignored, so pushing your copy of this repo won't publish them.
+- **Your numbers stay private.** `my/` and `deals/` live in your working folder on your computer. In this repo they're git-ignored; if you work in a folder that's your own git repo, add them to its `.gitignore` before pushing it anywhere public.
 
 ## Ground rules
 
@@ -68,7 +111,7 @@ Everything lands in `deals/<business>/`, with a one-line log of every listing in
 - **They can be wrong.** Check any number before you rely on it, especially one that came from the seller.
 - **This isn't financial, legal or tax advice.** Before you sign anything, talk to a lender, a CPA and a deal attorney.
 - **They never contact brokers or sellers.** You send your own questions.
-- **Running them uses your Claude usage**, and the research agents search the web.
+- **Running them uses your Claude or ChatGPT usage**, and the research agents search the web.
 
 ---
 

@@ -1,0 +1,12 @@
+{
+  "name": "deal-team-agents",
+  "description": "The deal team: AI agents that help a first-time buyer screen and research small businesses for sale.",
+  "owner": { "name": "Jon Wood" },
+  "plugins": [
+    {
+      "name": "deal-team",
+      "source": "./",
+      "description": "Screener, mentor, researcher and growth strategist agents, plus /deal-team:setup and /deal-team:diligence."
+    }
+  ]
+}

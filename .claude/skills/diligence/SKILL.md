@@ -1,9 +1,9 @@
 ---
 name: diligence
-description: Run the whole deal team on one business, in order - screener, mentor, then researcher and growth strategist side by side, then mentor again. Use for "/diligence <listing>", "run the team on this business", "work this deal". Takes a listing URL, pasted listing text, or a description. Produces a folder in deals/ with the screen, the mentor's read and walk-away line, both sets of findings, and the mentor's advice. Never makes the buy / pass / negotiate call and never contacts anyone.
+description: Run the whole deal team on one business, in order - screener, mentor, then researcher and growth strategist side by side, then mentor again. Use for "/deal-team:diligence <listing>" or "/diligence <listing>", "run the team on this business", "work this deal". Takes a listing URL, pasted listing text, or a description. Produces a folder in deals/ with the screen, the mentor's read and walk-away line, both sets of findings, and the mentor's advice. Never makes the buy / pass / negotiate call and never contacts anyone.
 ---
 
-# /diligence: run the deal team on one business
+# Diligence: run the deal team on one business
 
 You (the main session) are the coordinator. The four agents do the work; you hand each one its inputs, in order, and pass files between them. Every handoff is a file in `deals/<slug>/`, so each agent starts fresh and reads exactly what it needs.
 
@@ -11,13 +11,13 @@ You (the main session) are the coordinator. The four agents do the work; you han
 
 ## Step 0: set up
 
-0. **If `my/buy-box.md` doesn't exist yet, or still has unfilled `[BRACKETS]`, stop and tell the user to run `/setup-team` first.** Screening against a blank rule is guessing.
+0. **If `my/buy-box.md` doesn't exist yet, or still has unfilled `[BRACKETS]`, stop and tell the user to run setup (`/deal-team:setup` if you installed the plugin, or `/setup` if you opened this folder in Claude Code) first.** Screening against a blank rule is guessing.
 1. Pick a short slug for the business (e.g. `acme-hvac`). Check `deals/` for an existing folder or a line in `deals/log.md` first. If it's already there, this is an update: reuse the folder, don't create a second one.
 2. Create `deals/<slug>/` and save the raw input to `deals/<slug>/listing.md`.
 
 ## Step 1: the screener (the Pokédex)
 
-Run the **deal-screener** agent on the listing. Save its verdict block to `deals/<slug>/screen.md` and add one line to `deals/log.md`: date · business · asking price · verdict · reason.
+Run the **deal-screener** agent on the listing (in a plugin install the agents are named `deal-team:deal-screener`, `deal-team:deal-mentor`, `deal-team:analyst` and `deal-team:growth-strategist`). Save its verdict block to `deals/<slug>/screen.md` and add one line to `deals/log.md`: date · business · asking price · verdict · reason.
 
 - **DROP or LOG-ONLY:** stop here. Tell the buyer the verdict and the deciding rule. Only continue if they say to anyway.
 - **PROMOTE:** continue.
