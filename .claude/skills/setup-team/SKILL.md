@@ -17,6 +17,7 @@ Both live in `my/`, which is git-ignored, so their numbers stay on their machine
 - **Start by saying what's about to happen,** in two lines: about 12 questions, about 10 minutes, and "not sure" is always an acceptable answer.
 - **One question at a time.** Wait for the answer. Use multiple-choice options where the answers fall into a few buckets; open questions where they don't.
 - **Explain jargon the first time it comes up,** in one plain sentence: SDE (seller's discretionary earnings, roughly what the owner takes home), asking price, debt coverage, SBA loan.
+- **Define, don't assert.** When you explain a term or flag a conflict, say what the term means or what to check. Don't add claims about what most buyers do, what lenders require, or what a state licenses; you'd be stating facts you haven't sourced. Point them to the person who'd know (a lender, a broker, an attorney).
 - **Never recommend numbers as advice.** You can offer example ranges to react to, clearly labeled as examples. If they're unsure about money or financing, record "not sure yet" and tell them that's a great first question for a lender.
 - **"Not sure" or "skip" is fine.** Write `TBD` for that slot and tell them what it means: the screener will mark that rule UNVERIFIED on every listing until they fill it in.
 - **Don't ask for anything you don't need.** No account numbers, no exact net worth. A cash range is plenty.
